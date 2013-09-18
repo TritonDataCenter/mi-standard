@@ -1,0 +1,36 @@
+standard-13.2.0
+* Base image is base-13.2.0 (2013Q2)
+* PHP version is php 5.4.17
+* Apache version is 2.2.25
+* Ruby version is 1.9.3p448
+* Python version is 2.7.5
+* GCC version is 4.7.3
+* MySQL version is 5.5.32
+* PostgreSQL version is 9.1.9
+* Perl version is 5.18.0
+* Git version is 1.8.3.1
+* Chef version is 11.6.0
+* Ohai version is 6.18.0
+
+standard-1.0.7
+* Fix admin and root passwords not getting set
+* Fix courier authlib stuck in maintenance
+
+standard-1.0.5
+* Based image is base-1.7.2 which has /cores fix
+
+standard-1.0.4
+* Based image is base-1.7.1
+* Fixed nginx path bug in localhost.conf
+* No more /opt/local/dtrace, uses dtracetools pkgsrc package
+
+standard-1.0.1
+* Based image is base-1.7.0 (2012Q1)
+* Modified tpl structure to fit new tpl sm-prepare-image structure
+
+smartosstandard-1.0
+* Fixed documentation link to be shorter, taking out /display/
+* Based on new proto, nfs client fix DATASET-176
+
+smartosstandard-0.9 beta
+* Initial release
