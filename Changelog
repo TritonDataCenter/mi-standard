@@ -1,3 +1,7 @@
+standard-13.2.1
+* Base image is base-13.2.1 (2013Q2)
+* Fixed Apache PHP configuration by default
+
 standard-13.2.0
 * Base image is base-13.2.0 (2013Q2)
 * PHP version is php 5.4.17

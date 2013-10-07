@@ -34,6 +34,7 @@ echo "AddHandler php5-script .php" >> /opt/local/etc/httpd/httpd.conf
 # Clean up
 echo "* Cleaning up."
 rm -rf /root/*
+rm -rf /.zonecontrol/metadata.sock
 
 # Prepare image for provisioning
 sm-prepare-image -y

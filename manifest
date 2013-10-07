@@ -1,7 +1,7 @@
 name="standard"
 organization="Joyent"
 brand="Instance"
-version="13.2.0"
+version="13.2.1"
 description="A SmartOS 32-bit image optimized for web development. Everything you need to build a web stack such as Ruby, Apache, and MySQL is installed and ready to use."
 homepage="http://wiki.joyent.com/jpc2/Standard+Instance"
 users="root admin mysql pgsql"
