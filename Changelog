@@ -1,3 +1,27 @@
+standard-13.3.1
+* Base image is base-13.3.1 (2013Q2)
+* APC extension no longer available with PHP 5.5 (Zend Optimizer instead)
+* Zend Optimizer default configuration in PHP configuration
+* Smtools fix for NameVirtualHosts in sm-create-vhost
+* PHP version is 5.5.4 (Zend Engine v2.5.0)
+* Zend Optimizer version is 7.0.0
+* Apache version is 2.2.25
+* Ruby version is 1.9.3p484
+* Python version is 2.7.5
+* GCC version is 4.7.3
+* MySQL version is 5.5.33
+* PostgreSQL version is 9.1.9
+* Perl version is 5.18.1
+* Git version is 1.8.4
+* Chef version is 11.8.2
+* Ohai version is 6.20.0
+
+standard-13.2.3
+* Updated nodejs version to 0.10.21
+
+standard-13.2.2
+* Fixed PHP configuration to add extensions
+
 standard-13.2.1
 * Base image is base-13.2.1 (2013Q2)
 * Fixed Apache PHP configuration by default

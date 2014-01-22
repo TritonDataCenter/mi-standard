@@ -9,8 +9,8 @@ set -o errexit
 
 # Ensure we have updated standard packages
 echo "* Updating standard packages.";
-pkg_delete -v nodejs smtools
-pkg_add -v nodejs smtools
+pkg_delete -v nodejs smtools zoneinit
+pkg_add -v nodejs smtools zoneinit
 npm install smartdc -g
 npm install jsontool -g
 
@@ -30,6 +30,64 @@ rm /opt/local/etc/chef/chef-client.xml
 # Enable PHP in Apache
 echo "LoadModule php5_module lib/httpd/mod_php5.so" >> /opt/local/etc/httpd/httpd.conf
 echo "AddHandler php5-script .php" >> /opt/local/etc/httpd/httpd.conf
+
+# Enable PHP extensions
+sed -i '/;extension=php_xsl.dll/a \
+extension=ZendOptimizerPlus.so \
+;extension=bcmath.so \
+;extension=bz2.so \
+;extension=calendar.so \
+extension=curl.so \
+;extension=dba.so \
+;extension=dbase.so \
+;extension=dbx.so \
+extension=dom.so \
+;extension=eaccelerator.so \
+;extension=exif.so \
+;extension=ftp.so \
+extension=gd.so \
+;extension=gettext.so \
+;extension=gmp.so \
+extension=iconv.so \
+;extension=imap.so \
+extension=json.so \
+;extension=ldap.so \
+;extension=mhash.so \
+extension=mbstring.so \
+;extension=memcache.so \
+extension=mcrypt.so \
+extension=mysql.so \
+extension=mysqli.so \
+;extension=pcntl.so \
+;extension=pdf.so \
+;extension=pdo.so \
+;extension=pdo_mysql.so \
+;extension=pdo_pgsql.so \
+;extension=pdo_sqlite.so \
+;extension=pgsql.so \
+;extension=posix.so \
+;extension=pspell.so \
+;extension=shmop.so \
+;extension=soap.so \
+;extension=sockets.so \
+;extension=sqlite.so \
+;extension=sysvsem.so \
+;extension=sysvshm.so \
+;extension=wddx.so \
+extension=xmlrpc.so \
+extension=xsl.so \
+;extension=zip.so \
+extension=zlib.so' /opt/local/etc/php.ini
+
+cat ->> /opt/local/etc/php.ini << EOF
+[Zend]
+opcache.memory_consumption=64
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=4000
+opcache.revalidate_freq=60
+opcache.fast_shutdown=1
+opcache.enable_cli=1
+EOF
 
 # Clean up
 echo "* Cleaning up."
